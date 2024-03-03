@@ -18,10 +18,10 @@ Overall, this function calling capability, a pivotal step towards achieving stat
 
 # Code Structure
 
-This repository has as main objectives the reproducibility of the experiments, the transparency of the results and the option to use our Custom API's setup for the Geo Domain and Music Domain respectively, to facilitate future work in similar directions. The "Ground Truth.xlsx" shows the ground truth i.e. the correct answer and correct function call for each question. The "Error Analysis and Results.xlsx" file gives an overview of the results as well as the errors made for each different setup. The structure of the two folders resources and helpers are described below.
+This repository has as its main objectives the reproducibility of the experiments, the transparency of the results, and the option to use our Custom API's setup for the Geo Domain and Music Domain respectively, to facilitate future work in similar directions. The "Ground Truth.xlsx" shows the ground truth i.e. the correct answer and correct function call for each question. The "Error Analysis and Results.xlsx" file gives an overview of the results as well as the errors made for each different setup. The structure of the two folders resources and helpers are described below.
 
-## Resources
-This folder consists of all the resources to reproduce the experiments. The data folder consists of all the result files of our experiments carried out while the Python Notebooks folder consists of pytheon notebooks used to carry out the experiments. There is a notebook for each different prompt and function description setup used for each question set.  The structure of each notebook is almost the same, where the prompt template and all the accessible functions for GPT for a particular setup for a question set are defined at the top. Next, there are two subsections, one each for different functions accessible for that particular setup i.e. access to either a superfunction or multiple subfunctions.  The naming convention for each of the results and notebooks is self-explanatory, however, they are different from the ones mentioned in the thesis report. The table below points out which one refers to which. 
+## resources
+This folder consists of all the resources to reproduce the experiments. The data folder consists of all the result files of our experiments carried out while the Python Notebooks folder consists of Python notebooks used to carry out the experiments. There is a notebook for each different prompt and function description setup used for each question set.  The structure of each notebook is almost the same, where the prompt template and all the accessible functions for GPT for a particular setup for a question set are defined at the top. Next, there are two subsections, one each for different functions accessible for that particular setup i.e. access to either a superfunction or multiple subfunctions.  The naming convention for each of the results and notebooks is self-explanatory, however, they are different from the ones mentioned in the thesis report. The table below points out which one refers to which. 
 
 
 ### Correspondence between Results and Thesis Naming Conventions 
@@ -38,7 +38,7 @@ This folder consists of all the resources to reproduce the experiments. The data
 | Prompt 5 | Dual-Database Prompt |
 
 ## helpers
-The helpers consist of python files to replicate our Custom Api Setup and a file that contains helper functions for running the function calling process.
+The helpers consist of Python files to replicate our Custom Api Setup and a file that contains helper functions for running the function calling process.
 - langchainhelpers - This file consists of a custom output parser to parse the function call from GPT and functions to run an LLM chain once or multiple times. These functions are used to communicate with GPT and run the funcion calling process for each question based on the number of function calls required to answer the question.
 - openstreetmaps - This file contains all functions to retrieve, parse, and structure the data retrieved Open StreetMaps.
 - dbpedia - This file contains all functions to retrieve, parse, and structure the data from DBpedia. 
@@ -50,7 +50,7 @@ The helpers consist of python files to replicate our Custom Api Setup and a file
 
 # Requirements 
 
-To reproduce the experiments you would need API access to Spotify API and Open AI API. The API access for Open AI is paid, however, every new user gets a 5-dollar credit. More information on how to setup the access key can be found here https://platform.openai.com/docs/quickstart?context=python. For the API access to Spotify, we refer to this article https://medium.com/@maxtingle/getting-started-with-spotifys-api-spotipy-197c3dc6353b to set up the credentials. Once you have ccess to both, you need to set them in the keys.env file in the helpers folder. For using the MusicBrainz API and Open Street Maps API responsibly, we also suggest updating the other 4 variables in the same file. 
+To reproduce the experiments you would need API access to Spotify API and Open AI API. The API access for Open AI is paid, however, every new user gets a 5-dollar credit. More information on how to set up the access key can be found here https://platform.openai.com/docs/quickstart?context=python. For the API access to Spotify, we refer to this article https://medium.com/@maxtingle/getting-started-with-spotifys-api-spotipy-197c3dc6353b to set up the credentials. Once you have access to both, you need to set them in the keys.env file in the helpers folder. To use the MusicBrainz API and Open Street Maps API responsibly, we also suggest updating the other 4 variables in the same file. 
 
 Finally, we also suggest adding the path of the locally cloned repository to your PYTHONPATH environment variable so that the helpers package can be loaded anywhere. Otherwise, you would need to copy and paste the helpers folders into the Python_Notebooks to load helpers without any issues and run the experiments.
 
